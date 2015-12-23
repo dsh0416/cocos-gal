@@ -1,4 +1,5 @@
 # Cocos-gal
+IPA ['kəukəus ɡæluː]
 ## What is Cocos-gal
 Cocos-gal is a DSL(Domain Specific Language) to create interactive fiction game(eg. galgame) in a very fast and easy way. Cocos-gal behaves as a library of cocos2d-js, so that you still could use almost every feature in cocos2d to make your choice of using this library with no side effects.
 
