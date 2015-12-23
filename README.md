@@ -29,3 +29,5 @@ Stable: No release yet
 For new features requests, please use the gitter chatroom, by clicking the above icon.
 
 For bugs, please use the [GitHub Issue ](https://github.com/dsh0416/cocos-gal/issues) directly.
+
+To contribute codes, please read [How to contribute ](https://github.com/dsh0416/cocos-gal/tree/master/doc/how-to-contribute.md) first.
