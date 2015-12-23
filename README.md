@@ -10,6 +10,7 @@ The truth is that we are making an interactive fiction game, but we can hardly f
 2. Windows, Mac OS X, Linux, Android, iOS Supported
 3. No Injection, No Side Effects to Cocos2d-js
 4. High Performance
+5. Built-in Game Saving Features
 
 ## License
 MIT License
