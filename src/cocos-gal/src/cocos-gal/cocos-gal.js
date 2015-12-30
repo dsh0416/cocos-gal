@@ -18,7 +18,15 @@ var CocosGal = {
              * }
              *
              * @param {atom_background} The background (Optional)
-             * @param {atom_imgs} The array of role images (Optional)
+             * @param {atom_imgs} The array of role images (Optional), image example
+             * {
+             *  src: src,
+             *  sizeX: 100,
+             *  sizeY: 100,
+             *  posX: 20,
+             *  posY: 50
+             * }
+             *
              * @param {atom_bgm} The background melody (Optional)
              */
             this.atom_id = atom_id;
@@ -45,25 +53,6 @@ var CocosGal = {
             this.scene_atoms = [];
             this.scene_background = null;
             this.scene_bgm = null;
-        }
-        function getScene(){
-            var GalLayer = cc.Layer.extend({
-                sprite:null,
-                ctor:function () {
-                    this._super();
-                    var size = cc.winSize;
-                    var mainscene = ccs.load(res.MainScene_json);
-                    this.addChild(mainscene.node);
-                    return true;
-                }
-            });
-            return cc.Scene.extend({
-                onEnter:function () {
-                    this._super();
-                    var layer = new HelloWorldLayer();
-                    this.addChild(layer);
-                }
-            });
         }
         return Scene;
     })(),
@@ -92,6 +81,35 @@ var CocosGal = {
             now_scene: null,
             now_atom: null
         },
-        game_variables: {}
+        game_variables: {},
+        jump: function(chapter_id, scene_id, atom_id){
+            this.Game.game_progress.now_chapter = chapter_id;
+            this.Game.game_progress.now_scene = scene_id;
+            this.Game.game_progress.now_atom = atom_id;
+            this.Game.runScene();
+        },
+        runScene: function () {
+
+            var GalLayer = cc.Layer.extend({
+                sprite:null,
+                ctor:function () {
+                    this._super();
+                    var size = cc.winSize;
+                    var mainscene = ccs.load(res.MainScene_json);
+                    this.addChild(mainscene.node);
+                    return true;
+                }
+            });
+
+            var GalScene = cc.Scene.extend({
+                onEnter:function () {
+                    this._super();
+                    var layer = new GalLayer();
+                    this.addChild(layer);
+                }
+            });
+
+
+        }
     }
 };
